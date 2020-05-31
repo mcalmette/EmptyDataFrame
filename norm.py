@@ -70,8 +70,8 @@ def run():
         df_temp = df_temp.rename(columns={'Adj Close' : symbol})
         df1 = df1.join(df_temp)
 
-
-    plot_data(df1)
+    normalized_df = (df1 - df1.mean()) / df1.std() #used to normalize data
+    plot_data(normalized_df)
 
 
 if __name__ == "__main__":
