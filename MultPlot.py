@@ -23,8 +23,10 @@ def get_data(symbols, dates):
 
     return df
 
-def plot_data(df):
-    df.plot()
+def plot_data(df, title= "Stock prices"):
+    a = df.plot(title=title,fontsize=16)
+    a.set_xlabel("Date")
+    a.set_ylabel("Price")
     plt.show()
 
 def run():
